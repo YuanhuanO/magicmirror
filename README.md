@@ -53,9 +53,6 @@ SmartMirror is a cutting-edge device that enhances your daily routine by providi
 ## 👥 Team
 Yuanhuan Deng, Yixuan He, Yingshan Hu, Hongqian Li
 
-## 🔧 Built With
-- [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) - An open source modular smart mirror platform
-
 ## 📝 References
 This project builds upon the MagicMirror² open source platform. For the original repository and documentation, please visit:
 - MagicMirror² Repository: https://github.com/MagicMirrorOrg/MagicMirror
