@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Control System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            margin: 0 0 1.5rem 0;
+            color: #1a1a1a;
+        }
+
+        .authorized .container {
+            border-left: 4px solid #4CAF50;
+        }
+
+        .unauthorized .container {
+            border-left: 4px solid #f44336;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin: 1rem 0;
+        }
+
+        .message {
+            margin: 1rem 0;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .user-name {
+            font-size: 1.25rem;
+            color: #4CAF50;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .timestamp {
+            font-size: 0.875rem;
+            color: #999;
+            margin-top: 1.5rem;
+        }
+
+        .retry-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .retry-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body class="authorized">
+    <div class="container">
+        
+    <h1>Access Granted</h1>
+    <div class="user-name" id="userName">Welcome, User</div>
+    <div class="message">You have been successfully authenticated.</div>
+    <div class="timestamp" id="loginTime"></div>
+
+    </div>
+
+    <script>
+        // Update timestamp
+        document.getElementById('loginTime').textContent = new Date().toLocaleString();
+
+        // Update user name if provided
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        const userNameElement = document.getElementById('userName');
+        if (userName && userNameElement) {
+            userNameElement.textContent = `Welcome, ${userName}`;
+        }
+
+        // Retry function
+        function retryAccess() {
+            window.location.href = '/retry';
+        }
+    </script>
+</body>
+</html>

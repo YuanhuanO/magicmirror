@@ -1,3 +1,4 @@
 env/
+venv/
 face_recognition/face_rec
 MagicMirror/node_modules/
